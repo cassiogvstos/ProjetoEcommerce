@@ -11,5 +11,6 @@ namespace DesceUmaGeralada.Models
         public int Observacao { get; set; }
 
         public ICollection<Produto> Produtos { get; set; }
+        public ICollection<Cliente> Clientes { get; set; }
     }
 }

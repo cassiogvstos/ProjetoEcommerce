@@ -10,9 +10,9 @@ namespace DesceUmaGeralada.Models
         public int ID { get; set; }
         public string Nome { get; set; }
         public string SobreNome { get; set; }
-        public DateTime NotaFiscal { get; set; }
+        //public int NotaFiscalID { get; set; }
 
         public ICollection<Produto> Produtos { get; set; }
-        public DateTime ProdutoDate { get; internal set; }
+        public DateTime ProdutoDate { get;  set; }
     }
 }

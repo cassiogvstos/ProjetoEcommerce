@@ -5,21 +5,37 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DesceUmaGeralada.Models;
+using Microsoft.EntityFrameworkCore;
+using DesceUmaGeralada.Dados;
+using DesceUmaGeralada.Models.DesceUmaGeladaViewModels;
 
 namespace DesceUmaGeralada.Controllers
 {
     public class HomeController : Controller
     {
+
+        private readonly BeerContext _context;
+
+        public HomeController(BeerContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        public async Task<ActionResult> About()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            IQueryable<ProductDateGroup> data =
+                from cliente in _context.Clientes
+                group cliente by cliente.ProdutoDate into dateGroup
+                select new ProductDateGroup()
+                {
+                    Produto = dateGroup.Key,
+                    ClienteCount = dateGroup.Count()
+                };
+            return View(await data.AsNoTracking().ToListAsync());
         }
 
         public IActionResult Contact()

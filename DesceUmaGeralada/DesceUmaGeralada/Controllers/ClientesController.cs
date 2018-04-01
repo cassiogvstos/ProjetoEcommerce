@@ -20,9 +20,46 @@ namespace DesceUmaGeralada.Controllers
         }
 
         // GET: Clientes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
-            return View(await _context.Clientes.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
+            ViewData["CurrentSort"] = sortOrder;
+
+            if(searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            var clientes = from s in _context.Clientes
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                clientes = clientes.Where(s => s.SobreNome.Contains(searchString)
+                                       || s.Nome.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    clientes = clientes.OrderByDescending(s => s.Nome);
+                    break;
+                case "Date":
+                    clientes = clientes.OrderBy(s => s.ProdutoDate);
+                    break;
+                case "date_desc":
+                    clientes = clientes.OrderByDescending(s => s.ProdutoDate);
+                    break;
+                default:
+                    clientes = clientes.OrderBy(s => s.SobreNome);
+                    break;
+            }
+            int pageSize = 3;
+            return View(await PaginatedList<Cliente>.CreateAsync(clientes.AsNoTracking(), page ?? 1, pageSize));
         }
 
         // GET: Clientes/Details/5
@@ -54,7 +91,7 @@ namespace DesceUmaGeralada.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nome,SobreNome,NotaFiscal,ProdutoDate")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("ID,Nome,SobreNome,ProdutoDate")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +123,7 @@ namespace DesceUmaGeralada.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Nome,SobreNome,NotaFiscal,ProdutoDate")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Nome,SobreNome  ,ProdutoDate")] Cliente cliente)
         {
             if (id != cliente.ID)
             {
