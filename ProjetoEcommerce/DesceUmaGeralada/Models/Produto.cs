@@ -8,6 +8,7 @@ namespace DesceUmaGeralada.Models
     public class Produto
     {
         public int ProdutoID { get; set; }
+        public string descricao { get; set; }
         public int NotaFiscalID { get; set; }
         public int ClienteID { get; set; }
         

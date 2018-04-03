@@ -9,3 +9,14 @@ C:\Users\Cassio\source\repos\DesceUmaGeralada\DesceUmaGeralada\obj\Debug\netcore
 C:\Users\Cassio\source\repos\DesceUmaGeralada\DesceUmaGeralada\obj\Debug\netcoreapp2.0\DesceUmaGeralada.AssemblyInfo.cs
 C:\Users\Cassio\source\repos\DesceUmaGeralada\DesceUmaGeralada\obj\Debug\netcoreapp2.0\DesceUmaGeralada.dll
 C:\Users\Cassio\source\repos\DesceUmaGeralada\DesceUmaGeralada\obj\Debug\netcoreapp2.0\DesceUmaGeralada.pdb
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\bin\Debug\netcoreapp2.0\DesceUmaGeralada.deps.json
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\bin\Debug\netcoreapp2.0\DesceUmaGeralada.runtimeconfig.json
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\bin\Debug\netcoreapp2.0\DesceUmaGeralada.runtimeconfig.dev.json
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\bin\Debug\netcoreapp2.0\DesceUmaGeralada.dll
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\bin\Debug\netcoreapp2.0\DesceUmaGeralada.pdb
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\obj\Debug\netcoreapp2.0\DesceUmaGeralada.csprojResolveAssemblyReference.cache
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\obj\Debug\netcoreapp2.0\DesceUmaGeralada.csproj.CoreCompileInputs.cache
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\obj\Debug\netcoreapp2.0\DesceUmaGeralada.AssemblyInfoInputs.cache
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\obj\Debug\netcoreapp2.0\DesceUmaGeralada.AssemblyInfo.cs
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\obj\Debug\netcoreapp2.0\DesceUmaGeralada.dll
+C:\Users\Cassio\source\repos\ProjetoEcommerce\DesceUmaGeralada\obj\Debug\netcoreapp2.0\DesceUmaGeralada.pdb
