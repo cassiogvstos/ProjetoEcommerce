@@ -13,5 +13,7 @@ namespace DesceUmaGeralada.Models
         
         public ICollection<Produto> Produtos { get; set; }
         public string ProdutoDescricao { get;  set; }
+
+        public DateTime DataRegistro { get; set; }
     }
 }

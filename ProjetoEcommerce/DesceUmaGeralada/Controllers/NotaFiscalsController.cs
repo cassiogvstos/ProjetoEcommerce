@@ -57,7 +57,7 @@ namespace DesceUmaGeralada.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NotaFiscalID,Tipo,Observacao")] NotaFiscal notaFiscal)
+        public async Task<IActionResult> Create([Bind("NotaFiscalID,Tipo,Observacao,Nome,ProdutoDescricao")] NotaFiscal notaFiscal)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace DesceUmaGeralada.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("NotaFiscalID,Tipo,Observacao")] NotaFiscal notaFiscal)
+        public async Task<IActionResult> Edit(int id, [Bind("NotaFiscalID,Tipo,Observacao,ClienteID,ProdutoDescricao")] NotaFiscal notaFiscal)
         {
             if (id != notaFiscal.NotaFiscalID)
             {
