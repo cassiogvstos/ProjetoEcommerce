@@ -8,7 +8,8 @@ namespace DesceUmaGeralada.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int NotaFiscalID { get; set; }
         public string Tipo { get; set; }
-        public int Observacao { get; set; }
+        public string Observacao { get; set; }
+        public int ClienteID { get; set; }
 
         public ICollection<Produto> Produtos { get; set; }
         public ICollection<Cliente> Clientes { get; set; }

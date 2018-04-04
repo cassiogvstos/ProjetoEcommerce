@@ -29,10 +29,10 @@ namespace DesceUmaGeralada.Controllers
         {
             IQueryable<ProductDateGroup> data =
                 from cliente in _context.Clientes
-                group cliente by cliente.ProdutoDate into dateGroup
+                group cliente by cliente.Produtos into dateGroup
                 select new ProductDateGroup()
                 {
-                    Produto = dateGroup.Key,
+                    ProdutoCount = dateGroup.Count(),
                     ClienteCount = dateGroup.Count()
                 };
             return View(await data.AsNoTracking().ToListAsync());

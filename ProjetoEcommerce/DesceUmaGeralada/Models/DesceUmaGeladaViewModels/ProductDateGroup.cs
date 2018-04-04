@@ -9,7 +9,7 @@ namespace DesceUmaGeralada.Models.DesceUmaGeladaViewModels
     public class ProductDateGroup
     {
       [DataType(DataType.Date)]
-      public DateTime? Produto { get; set; }
+      public int? ProdutoCount { get; set; }
 
       public int ClienteCount { get; set; }
         

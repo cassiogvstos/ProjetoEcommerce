@@ -49,10 +49,10 @@ namespace DesceUmaGeralada.Controllers
                     clientes = clientes.OrderByDescending(s => s.Nome);
                     break;
                 case "Date":
-                    clientes = clientes.OrderBy(s => s.ProdutoDate);
+                    clientes = clientes.OrderBy(s => s.Produtos);
                     break;
                 case "date_desc":
-                    clientes = clientes.OrderByDescending(s => s.ProdutoDate);
+                    clientes = clientes.OrderByDescending(s => s.Produtos);
                     break;
                 default:
                     clientes = clientes.OrderBy(s => s.SobreNome);
